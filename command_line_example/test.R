@@ -1,3 +1,5 @@
+#!/usr/bin/env Rscript
+
 #..thanks to http://www.r-bloggers.com/parse-arguments-of-an-r-script/
   
 ## Collect arguments
@@ -15,6 +17,6 @@ if(work_function == 'mean'){
   fn <- median 
 } else  stop('This function only applies mean and median column transformations.')
 
-cat(sprintf('Printing column %ss to file:', work_function))
+cat(sprintf('Printing column %ss to file\n:', work_function))
 (results <- as.data.frame(lapply(input_df, fn)))
 write.csv(results, file = output_file, row.names = FALSE, quote = FALSE)
